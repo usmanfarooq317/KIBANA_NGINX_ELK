@@ -67,8 +67,8 @@ services:
       elasticsearch:
         condition: service_healthy
     volumes:
-      - ./fluent-bit/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
-      # REMOVE THIS LINE: - ./fluent-bit/parsers.conf:/fluent-bit/etc/parsers.conf
+      - ./fluent-bit/etc:/fluent-bit/etc
+      - ./fluent-bit/scripts:/fluent-bit/scripts
       - app1-logs:/fluent-bit/logs/app1
       - app2-logs:/fluent-bit/logs/app2
       - app3-logs:/fluent-bit/logs/app3
